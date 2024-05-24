@@ -27,6 +27,7 @@
 .header__logo {
   width: 173px;
   height: 33px;
+  padding-bottom: 35px;
 }
 
 .profile {
@@ -56,6 +57,11 @@
   width: 24px;
   border-color: white;
   grid-area: button;
+}
+
+.profile__edit-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
 }
 
 .profile__add-button {
@@ -100,6 +106,7 @@
 
 .cards {
   margin-top: 51px;
+  display: grid;
 
   margin-top: 30px;
 
@@ -166,6 +173,21 @@
   cursor: pointer;
 }
 
+.footer {
+  box-sizing: border-box;
+}
+
+.footer__copyright {
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: #545454;
+  margin: 0;
+  margin-top: 40px;
+
+  margin-bottom: 60px;
+}
+
 @media (max-width: 568px) {
   .cards__list {
     padding: 15px 0 18px;
@@ -186,7 +208,7 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 420px) {
   .profile {
     flex-direction: column;
     max-width: 100%;
@@ -241,8 +263,95 @@
     flex-direction: column;
   }
   .header__logo {
+    justify-content: center;
     height: 24px;
     width: 126px;
     margin-bottom: 28px;
+    margin-left: 27px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .profile {
+    flex-direction: column;
+    max-width: 282px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .profile__items {
+    align-items: center;
+  }
+
+  .profile__info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 35px;
+  }
+
+  .profile__image {
+    margin: 0;
+    /* margin-left: 30px; */
+  }
+
+  .profile__description {
+    max-width: 282px;
+    text-align: center;
+    /* margin-top: 10px; */
+    padding-bottom: 30px;
+    /* font-size: 14px; */
+    /* padding: 0; */
+    /* margin: auto; */
+  }
+
+  .profile__add-button {
+    margin: auto;
+    min-width: 100%;
+  }
+
+  .profile__edit-button {
+    max-width: 100%;
+    /* margin: auto; */
+    margin-left: 10px;
+    height: 18px;
+    width: 18px;
+  }
+
+  .profile__title {
+    max-width: 100%;
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.2;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .header__logo {
+    justify-content: center;
+    margin-left: 50px;
+    height: 24px;
+  }
+
+  .footer {
+    /* box-sizing: border-box; */
+    max-width: 282px;
+    width: 581px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .footer__copyright {
+    /* max-width: 100%; */
+    font-size: 14px;
+    /* margin-top: 40px; */
+    margin-bottom: 30px;
   }
 }
