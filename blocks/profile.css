@@ -54,6 +54,9 @@
   line-height: 48px;
   font-weight: 500;
   grid-area: title;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .profile__description {
@@ -62,6 +65,10 @@
   font-weight: 400;
   grid-area: description;
   margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 373px;
 }
 
 .profile__image {
@@ -153,7 +160,7 @@
 
   .profile__add-button {
     margin: auto;
-
+    min-width: 100%;
     align-items: center;
   }
 
@@ -172,5 +179,10 @@
     line-height: 1.2;
     margin: auto;
     margin-top: 20px;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 900px) {
+  body {
+    overflow-x: hidden;
   }
 }

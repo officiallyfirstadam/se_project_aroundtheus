@@ -48,3 +48,9 @@
   opacity: 0.5;
   cursor: pointer;
 }
+
+@media screen and (min-width: 321px) and (max-width: 900px) {
+  body {
+    overflow-x: hidden !important;
+  }
+}

@@ -1,4 +1,4 @@
-.header {
+.header_page__section {
   margin-top: 35px;
   max-width: 880px;
   border-bottom: 1px solid rgba(84, 84, 84);
@@ -15,11 +15,13 @@
     flex-direction: column;
   }
   .header__logo {
-    justify-content: center;
     height: 24px;
     width: 126px;
-    margin-bottom: 28px;
-    margin-left: 27px;
+    margin: 28px 27px;
+  }
+  .header_page__section {
+    width: 320px;
+    height: 56px;
   }
 }
 
@@ -29,8 +31,8 @@
   }
 
   .header__logo {
-    justify-content: center;
-    margin-left: 50px;
     height: 24px;
+    width: 126px;
+    margin: 28px 50px;
   }
 }
