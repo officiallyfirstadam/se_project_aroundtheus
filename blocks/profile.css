@@ -20,10 +20,11 @@
 }
 
 .profile__edit-button {
-  background: transparent url(../images/edit\ pencil.png) center no-repeat;
+  background: transparent url(../images/pencil.svg) center no-repeat;
   height: 24px;
   width: 24px;
-  border-color: white;
+  border-radius: 2px;
+  border: 2px solid white;
   grid-area: button;
 }
 
@@ -36,7 +37,6 @@
   background: transparent url(../images/plusbutton.svg) center no-repeat;
   height: 50px;
   width: 150px;
-  border-color: white;
   margin-left: auto;
   border-radius: 2px;
   border: 2px solid white;
@@ -45,7 +45,6 @@
 
 .profile__add-button:hover {
   opacity: 0.6;
-
   cursor: pointer;
 }
 
@@ -57,6 +56,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  margin: 0;
 }
 
 .profile__description {
@@ -78,48 +78,6 @@
   margin-right: 24px;
   object-fit: cover;
   background-position: center;
-}
-
-@media screen and (max-width: 320px) {
-  .profile {
-    flex-direction: column;
-    max-width: 100%;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .profile__title {
-    font-size: 22px;
-    line-height: 27px;
-  }
-
-  .profile__image {
-    justify-content: center;
-    margin: 0;
-    margin-bottom: 20px;
-  }
-
-  .profile__info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .profile__description {
-    width: 100%;
-    text-align: center;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-  .profile__add-button {
-    margin: 0 auto;
-    max-width: 100%;
-    margin: 36px 0;
-    width: 282px;
-    height: 50px;
-  }
 }
 
 @media screen and (max-width: 900px) {
@@ -171,6 +129,49 @@
     margin-left: 10px;
     height: 18px;
     width: 18px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile {
+    flex-direction: column;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .profile__title {
+    font-size: 22px;
+    line-height: 27px;
+  }
+
+  .profile__image {
+    justify-content: center;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .profile__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .profile__description {
+    width: 100%;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .profile__add-button {
+    margin: 0 auto;
+    max-width: 100%;
+    margin: 36px 0;
+    width: 282px;
+    height: 50px;
   }
 }
 

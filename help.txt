@@ -1,4 +1,4 @@
-Installing & using the Inter fonts
+
 
 Contents:
   1.   Installing font files

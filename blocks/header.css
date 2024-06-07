@@ -10,10 +10,14 @@
   padding-bottom: 35px;
 }
 
-@media screen and (max-width: 320px) {
-  .header {
-    flex-direction: column;
+@media screen and (max-width: 900px) {
+  .header__logo {
+    height: 24px;
+    width: 126px;
+    margin: 28px 50px;
   }
+}
+@media screen and (max-width: 320px) {
   .header__logo {
     height: 24px;
     width: 126px;
@@ -22,17 +26,5 @@
   .header_page__section {
     width: 320px;
     height: 56px;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .header {
-    flex-direction: column;
-  }
-
-  .header__logo {
-    height: 24px;
-    width: 126px;
-    margin: 28px 50px;
   }
 }
