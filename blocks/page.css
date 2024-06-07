@@ -39,9 +39,3 @@
     min-height: 100vh;
   }
 }
-
-@media screen and (min-width: 321px) and (max-width: 900px) {
-  body {
-    overflow-x: hidden;
-  }
-}

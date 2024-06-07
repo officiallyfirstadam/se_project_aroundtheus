@@ -174,9 +174,3 @@
     height: 50px;
   }
 }
-
-@media screen and (min-width: 321px) and (max-width: 1280px) {
-  body {
-    overflow-x: hidden;
-  }
-}
