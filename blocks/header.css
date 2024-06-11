@@ -1,30 +1,32 @@
-.header_page__section {
+.header {
   margin-top: 35px;
   max-width: 880px;
-  border-bottom: 1px solid rgba(84, 84, 84);
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 }
 
 .header__logo {
   width: 173px;
   height: 33px;
-  padding-bottom: 35px;
+  margin-bottom: 35px;
 }
 
 @media screen and (max-width: 900px) {
+  .header {
+    flex-direction: column;
+  }
+
   .header__logo {
+    justify-content: center;
+    margin-left: 50px;
     height: 24px;
-    width: 126px;
-    margin: 28px 50px;
   }
 }
-@media screen and (max-width: 320px) {
+
+@media screen and (max-width: 420px) {
   .header__logo {
-    height: 24px;
+    /* justify-content: center; */
+    margin-left: 27px;
     width: 126px;
-    margin: 28px 27px;
-  }
-  .header_page__section {
-    width: 320px;
-    height: 56px;
+    margin-bottom: 28px;
   }
 }
