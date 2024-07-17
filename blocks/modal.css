@@ -105,6 +105,9 @@
 @media only screen and (max-width: 380px) {
   .modal__heading {
     font-size: 18px;
+    max-width: 238px;
+    max-height: 22px;
+    font-family: "inter";
     font-weight: 900;
     color: black;
   }
@@ -114,8 +117,18 @@
     padding: 0;
   }
   .modal__container {
-    width: 282px;
+    max-width: 182px;
     height: 322px;
-    padding: 10px;
+    margin: 25px, 22px;
+  }
+
+  .modal__input {
+    max-width: 182px;
+    max-height: 27px;
+    font-size: 14px;
+  }
+  .modal__button-save {
+    width: 182px;
+    height: 46px;
   }
 }
