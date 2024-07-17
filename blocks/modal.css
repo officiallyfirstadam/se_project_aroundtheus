@@ -114,21 +114,20 @@
 
   .modal_opened {
     display: flex;
-    padding: 0;
   }
   .modal__container {
-    max-width: 182px;
-    height: 322px;
+    max-width: 260px;
+    max-height: 222px;
     margin: 25px, 22px;
   }
 
   .modal__input {
-    max-width: 182px;
+    width: 202px;
     max-height: 27px;
     font-size: 14px;
   }
   .modal__button-save {
-    width: 182px;
+    width: 202px;
     height: 46px;
   }
 }
