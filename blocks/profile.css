@@ -86,6 +86,37 @@
   margin-right: 24px;
 }
 
+.profile__image-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.profile__image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.profile__image-container:hover .profile__image-overlay {
+  opacity: 1;
+}
+
+.profile__image-edit-icon {
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+}
+
 @media screen and (max-width: 900px) {
   .profile {
     flex-direction: column;

@@ -19,7 +19,12 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img src="./images/jacques.png" alt="Avatar" class="profile__image" />
+          <div class="profile__image-container">
+            <img src="./images/jacques.png" alt="Avatar" class="profile__image" />
+            <div class="profile__image-overlay" id="profile-avatar-edit-button">
+              <img src="./images/Edit-icon.svg" alt="Edit avatar" class="profile__image-edit-icon" />
+            </div>
+          </div>
           <div class="profile__info">
             <div class="profile__items">
               <h1 class="profile__title">Jacques Cousteau</h1>
@@ -122,6 +127,29 @@
       </div>
     </div>    
 
+
+    <!-- Avatar Edit Modal -->
+    <div class="modal" id="avatar-edit-modal">
+      <div class="modal__container">
+        <button class="modal__close" id="avatar-edit-close-button" type="button" aria-label="Close"></button>
+        <p class="modal__heading">Change Profile Picture</p>
+        <form class="modal__form" novalidate>
+          <label class="modal__label">
+            <span class="modal__label-text">Image link</span>
+            <input
+              type="url"
+              class="modal__input"
+              id="avatar-url-input"
+              name="avatar"
+              placeholder="https://"
+              required
+            />
+            <span class="modal__error"></span>
+          </label>
+          <button class="modal__button-save" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
 
     <!-- Image Preview Modal -->
     <div class="modal" id="preview-modal">

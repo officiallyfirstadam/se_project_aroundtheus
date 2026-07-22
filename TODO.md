@@ -1,12 +1,9 @@
-# Task: Fix Modal Issues
+# Task: Add Profile Picture Edit Feature
 
 ## Steps
-- [x] 1. Read all relevant files (modal.css, index.js, index.html, card.css, pages/index.css)
-- [x] 2. Create plan and get user approval
-- [x] 3. Update `.modal` to use `opacity`/`visibility` transitions instead of `display: none`
-- [x] 4. Update `.modal_opened` to use `opacity: 1`, `visibility: visible`, `pointer-events: all`
-- [x] 5. Fix `.modal__container_preview` max-width/max-height constraints
-- [x] 6. Add `overflow: hidden` to `.modal` to prevent horizontal scroll
-- [x] 7. Reposition close button for preview modal to avoid overflow
-- [x] 8. Test all modals open/close smoothly and no horizontal scroll
+- [x] 1. Wrap profile image in container with edit overlay in index.html
+- [x] 2. Add avatar edit modal HTML in index.html
+- [x] 3. Add overlay and edit icon CSS in profile.css
+- [x] 4. Add JavaScript logic for avatar edit modal in index.js
+- [ ] 5. Commit and push to GitHub
 

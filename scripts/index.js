@@ -57,6 +57,14 @@ const previewImage = previewModal ? previewModal.querySelector(".modal__preview-
 const previewCaption = previewModal ? previewModal.querySelector(".modal__preview-caption") : null;
 const previewCloseButton = document.querySelector("#preview-close-button");
 
+// Avatar edit modal elements
+const avatarEditButton = document.querySelector("#profile-avatar-edit-button");
+const avatarEditModal = document.querySelector("#avatar-edit-modal");
+const avatarUrlInput = document.querySelector("#avatar-url-input");
+const avatarEditForm = avatarEditModal ? avatarEditModal.querySelector(".modal__form") : null;
+const avatarEditCloseButton = document.querySelector("#avatar-edit-close-button");
+const profileImage = document.querySelector(".profile__image");
+
 // Functions
 function onEscKey(e) {
   if (e.key === "Escape") {
@@ -119,6 +127,18 @@ function handleAddCardSubmit(e) {
   closePopup(addCardModal);
 }
 
+// Avatar edit form handler
+function handleAvatarEditSubmit(e) {
+  e.preventDefault();
+  const newAvatarUrl = avatarUrlInput.value;
+  if (newAvatarUrl) {
+    profileImage.src = newAvatarUrl;
+    profileImage.alt = "Avatar";
+  }
+  avatarEditForm.reset();
+  closePopup(avatarEditModal);
+}
+
 // Event Listeners
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
@@ -150,6 +170,19 @@ document.addEventListener("click", (e) => {
 
 if (profileEditForm) profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 if (addCardForm) addCardForm.addEventListener("submit", handleAddCardSubmit);
+
+// Avatar edit modal event listeners
+if (avatarEditButton) {
+  avatarEditButton.addEventListener("click", () => {
+    openPopup(avatarEditModal);
+  });
+}
+
+if (avatarEditCloseButton) {
+  avatarEditCloseButton.addEventListener("click", () => closePopup(avatarEditModal));
+}
+
+if (avatarEditForm) avatarEditForm.addEventListener("submit", handleAvatarEditSubmit);
 
 // Render cards efficiently using a DocumentFragment to minimize reflows
 function renderCards(cards) {
