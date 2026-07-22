@@ -51,6 +51,12 @@ const cardTitleInput = document.querySelector("#card-title-input");
 const cardUrlInput = document.querySelector("#card-url-input");
 const addCardForm = addCardModal ? addCardModal.querySelector(".modal__form") : null;
 
+// Image preview modal elements
+const previewModal = document.querySelector("#preview-modal");
+const previewImage = previewModal ? previewModal.querySelector(".modal__preview-image") : null;
+const previewCaption = previewModal ? previewModal.querySelector(".modal__preview-caption") : null;
+const previewCloseButton = document.querySelector("#preview-close-button");
+
 // Functions
 function onEscKey(e) {
   if (e.key === "Escape") {
@@ -166,5 +172,26 @@ cardListEl.addEventListener("click", function (e) {
     likeBtn.classList.toggle("card__like_active");
   }
 });
+
+// Image preview: click on card image to open preview modal
+cardListEl.addEventListener("click", function (e) {
+  const cardImage = e.target.closest(".card__image");
+  if (!cardImage) return;
+  
+  const cardEl = cardImage.closest(".card");
+  const cardText = cardEl ? cardEl.querySelector(".card__text") : null;
+  
+  if (previewImage && previewCaption) {
+    previewImage.src = cardImage.src;
+    previewImage.alt = cardImage.alt;
+    previewCaption.textContent = cardText ? cardText.textContent : "";
+    openPopup(previewModal);
+  }
+});
+
+// Preview modal close button
+if (previewCloseButton) {
+  previewCloseButton.addEventListener("click", () => closePopup(previewModal));
+}
 
 
