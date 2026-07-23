@@ -93,11 +93,17 @@ function getCardElement(cardData) {
   cardImageEl.alt = cardData.name;
   cardImageEl.loading = "lazy";
   
-  // ADD THIS: Delete button listener for each individual card
+  // Like button listener for each individual card
+  const likeButton = cardElement.querySelector(".card__like");
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("card__like_active");
+  });
+  
+  // Delete button listener for each individual card
   const deleteButton = cardElement.querySelector(".card__delete");
   deleteButton.addEventListener("click", (e) => {
-    e.stopPropagation(); // Prevent card click event
-    cardElement.remove(); // Delete only THIS card
+    e.stopPropagation();
+    cardElement.remove();
   });
   
   return cardElement;
@@ -191,16 +197,6 @@ function renderCards(cards) {
 }
 
 renderCards(initialCards);
-
-
-
-
-cardListEl.addEventListener("click", function (e) {
-  if (e.target.closest(".card__like")) {
-    const likeBtn = e.target.closest(".card__like");
-    likeBtn.classList.toggle("card__like_active");
-  }
-});
 
 // Image preview: click on card image to open preview modal
 cardListEl.addEventListener("click", function (e) {
