@@ -99,6 +99,16 @@ function getCardElement(cardData) {
     likeButton.classList.toggle("card__like_active");
   });
   
+  // Image preview listener for each individual card image
+  cardImageEl.addEventListener("click", () => {
+    if (previewImage && previewCaption) {
+      previewImage.src = cardImageEl.src;
+      previewImage.alt = cardImageEl.alt;
+      previewCaption.textContent = cardTextEl.textContent;
+      openPopup(previewModal);
+    }
+  });
+  
   // Delete button listener for each individual card
   const deleteButton = cardElement.querySelector(".card__delete");
   deleteButton.addEventListener("click", (e) => {
@@ -197,19 +207,3 @@ function renderCards(cards) {
 }
 
 renderCards(initialCards);
-
-// Image preview: click on card image to open preview modal
-cardListEl.addEventListener("click", function (e) {
-  const cardImage = e.target.closest(".card__image");
-  if (!cardImage) return;
-  
-  const cardEl = cardImage.closest(".card");
-  const cardText = cardEl ? cardEl.querySelector(".card__text") : null;
-  
-  if (previewImage && previewCaption) {
-    previewImage.src = cardImage.src;
-    previewImage.alt = cardImage.alt;
-    previewCaption.textContent = cardText ? cardText.textContent : "";
-    openPopup(previewModal);
-  }
-});
