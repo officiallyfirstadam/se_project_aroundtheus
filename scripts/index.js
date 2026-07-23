@@ -55,14 +55,12 @@ const addCardForm = addCardModal ? addCardModal.querySelector(".modal__form") : 
 const previewModal = document.querySelector("#preview-modal");
 const previewImage = previewModal ? previewModal.querySelector(".modal__preview-image") : null;
 const previewCaption = previewModal ? previewModal.querySelector(".modal__preview-caption") : null;
-const previewCloseButton = document.querySelector("#preview-close-button");
 
 // Avatar edit modal elements
 const avatarEditButton = document.querySelector("#profile-avatar-edit-button");
 const avatarEditModal = document.querySelector("#avatar-edit-modal");
 const avatarUrlInput = document.querySelector("#avatar-url-input");
 const avatarEditForm = avatarEditModal ? avatarEditModal.querySelector(".modal__form") : null;
-const avatarEditCloseButton = document.querySelector("#avatar-edit-close-button");
 const profileImage = document.querySelector(".profile__image");
 
 // Functions
@@ -146,9 +144,6 @@ profileEditButton.addEventListener("click", () => {
   openPopup(profileEditModal);
 });
 
-const profileCloseButton = document.querySelector("#profile-close-button");
-if (profileCloseButton) profileCloseButton.addEventListener("click", () => closePopup(profileEditModal));
-
 // NEW: Add card modal event listener to open it
 if (addCardButton) {
   addCardButton.addEventListener("click", () => {
@@ -156,9 +151,11 @@ if (addCardButton) {
   });
 }
 
-const addCardCloseButton = document.querySelector("#add-card-close-button");
-if (addCardCloseButton) {
-  addCardCloseButton.addEventListener("click", () => closePopup(addCardModal));
+// Avatar edit modal event listeners
+if (avatarEditButton) {
+  avatarEditButton.addEventListener("click", () => {
+    openPopup(avatarEditModal);
+  });
 }
 
 // Close popup when clicking on overlay (modal root element)
@@ -170,19 +167,14 @@ document.addEventListener("click", (e) => {
 
 if (profileEditForm) profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 if (addCardForm) addCardForm.addEventListener("submit", handleAddCardSubmit);
-
-// Avatar edit modal event listeners
-if (avatarEditButton) {
-  avatarEditButton.addEventListener("click", () => {
-    openPopup(avatarEditModal);
-  });
-}
-
-if (avatarEditCloseButton) {
-  avatarEditCloseButton.addEventListener("click", () => closePopup(avatarEditModal));
-}
-
 if (avatarEditForm) avatarEditForm.addEventListener("submit", handleAvatarEditSubmit);
+
+// Universal close button handler for all modals
+const closeButtons = document.querySelectorAll(".modal__close");
+closeButtons.forEach((button) => {
+  const modal = button.closest(".modal");
+  button.addEventListener("click", () => closePopup(modal));
+});
 
 // Render cards efficiently using a DocumentFragment to minimize reflows
 function renderCards(cards) {
@@ -221,10 +213,3 @@ cardListEl.addEventListener("click", function (e) {
     openPopup(previewModal);
   }
 });
-
-// Preview modal close button
-if (previewCloseButton) {
-  previewCloseButton.addEventListener("click", () => closePopup(previewModal));
-}
-
-
