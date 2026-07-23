@@ -159,9 +159,13 @@ if (avatarEditButton) {
 }
 
 // Close popup when clicking on overlay (modal root element)
-document.addEventListener("click", (e) => {
-  const modal = e.target.closest(".modal_opened");
-  if (modal && e.target === modal) closePopup(modal);
+const modals = document.querySelectorAll(".modal");
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", (e) => {
+    if (e.target === modal) {
+      closePopup(modal);
+    }
+  });
 });
 
 
