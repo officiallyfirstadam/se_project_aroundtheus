@@ -1,10 +1,11 @@
 .card {
-  display:flex;
+  display: flex;
   flex-direction: column;
   list-style: none;
   border-radius: 10px;
   max-width: 282px;
   overflow: hidden;
+  position: relative;
 }
 
 .card__text {
@@ -46,45 +47,35 @@
   background: transparent url(../images/heart_inactive.svg) center no-repeat;
   width: 21px;
   height: 18px;
- border: none;
+  border: none;
 }
-
-
 
 .card__like_active {
-  background-image: url(../images/heart_active.svg) 
-  ;
+  background-image: url(../images/heart_active.svg);
 }
+
 .card__like:hover {
   opacity: 0.5;
   cursor: pointer;
-}
-
-
-.card {
-  position: relative; 
 }
 
 .card__delete {
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 18px;
-  height: 19px;
-  background-image: url('data:image/svg+xml;base64,...'); /* Your trash icon */
-  background: none;
+  width: 22px;
+  height: 22px;
   border: none;
   cursor: pointer;
- z-index: 2;
-ease-in-out;
-  transition: opacity 0.3s;
-
+  z-index: 2;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
- 
 .card__delete::before {
-  content: '🗑️'; 
+  content: '🗑️';
   font-size: 16px;
   line-height: 1;
-  opacity: 0.7;
 }
