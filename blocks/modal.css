@@ -168,10 +168,19 @@
     color: black;
   }
 
+  .modal__container_preview .modal__close { 
+    top: -28px;
+    right: -28px;
+  }
+
   .modal__container {
     max-width: 260px;
-    max-height: 222px;
+    max-height: 322px;
     margin: 25px, 22px;
+  }
+
+  .modal__container_preview {
+    max-height: 75vh;
   }
 
   .modal__input {
