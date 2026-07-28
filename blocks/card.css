@@ -60,22 +60,19 @@
 }
 
 .card__delete {
+  background: transparent url(../images/trashcan.png) center/contain no-repeat;
+  background-color: transparent;
+  appearance: none;
   position: absolute;
   top: 10px;
   right: 10px;
   width: 22px;
   height: 22px;
   border: none;
+  padding: 0;
+  margin: 0;
   cursor: pointer;
   z-index: 2;
-  background: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.card__delete::before {
-  content: '🗑️';
-  font-size: 16px;
-  line-height: 1;
-}
+
